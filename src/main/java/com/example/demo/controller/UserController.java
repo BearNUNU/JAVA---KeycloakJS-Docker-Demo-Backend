@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.UserService;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
+import com.example.demo.service.UserService;
 
 /**
  * 사용자 관련 API 요청을 처리하는 컨트롤러 클래스입니다.
@@ -38,7 +39,7 @@ public class UserController {
      * @param jwt Spring Security가 주입해주는 인증된 사용자의 JWT 토큰
      * @return 계정 삭제 성공 여부를 담은 응답 엔티티
      */
-    @DeleteMapping("/me")
+    @DeleteMapping("/delete")
     @PreAuthorize("isAuthenticated()") // 이 엔드포인트는 인증된 사용자만 호출할 수 있습니다.
     public ResponseEntity<?> deleteCurrentUser(@AuthenticationPrincipal Jwt jwt) {
         // JWT에서 사용자 ID('sub')와 사용자 이름('preferred_username')을 추출합니다.

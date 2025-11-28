@@ -59,7 +59,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         // [중요] 프론트엔드 개발 서버의 실제 주소로 변경해야 합니다.
         // 예: Vue(Vite) 기본 포트 5173, React 기본 포트 3000
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+        configuration.setAllowedOrigins(List.of("*"));
         // 허용할 HTTP 메소드를 지정합니다.
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         // 모든 HTTP 헤더를 허용합니다.

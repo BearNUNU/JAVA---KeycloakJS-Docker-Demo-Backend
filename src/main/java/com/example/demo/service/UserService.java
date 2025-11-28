@@ -1,12 +1,13 @@
 package com.example.demo.service;
 
-import jakarta.ws.rs.core.Response;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import jakarta.ws.rs.core.Response;
 
 /**
  * 사용자 관련 비즈니스 로직을 처리하는 서비스 클래스입니다.
@@ -36,6 +37,7 @@ public class UserService {
 
     /**
      * Keycloak에서 특정 사용자 ID를 가진 사용자를 삭제합니다.
+     * 
      * @param userId 삭제할 사용자의 ID (UUID 형식)
      */
     public void deleteUser(String userId) {
