@@ -30,3 +30,6 @@
 ## 🚀 시작하기
 
 프로젝트를 실행하고 사용하는 방법에 대한 자세한 내용은 `docs/setup-guide.md` 파일을 참고하세요.
+
+## setup-guide
+[setup-guide.md](./docs/setup-guide.md)
