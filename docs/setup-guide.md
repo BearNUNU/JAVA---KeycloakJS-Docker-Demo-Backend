@@ -11,6 +11,7 @@
       - [2.1. 백엔드 클라이언트 생성](#21-백엔드-클라이언트-생성)
     - [3. Spring Boot 애플리케이션 설정](#3-spring-boot-애플리케이션-설정)
     - [4. 애플리케이션 실행](#4-애플리케이션-실행)
+    - [5. backend-client 유저 관리 권한 부여](#5-backend-client-유저-관리-권한-부여)
 
 ---
 
@@ -92,3 +93,16 @@ keycloak.admin.password=admin # Keycloak 관리자 비밀번호
 ```
 
 애플리케이션이 정상적으로 실행되면 `localhost:8081`에서 API 서버가 동작합니다.
+
+
+### 5. backend-client 유저 관리 권한 부여
+
+유저 삭제를 위해서는 사용하는 backen-client에 manage-users role을 부여해야 한다.
+
+1. Keycloak 관리자 콘솔에 로그인합니다.
+2. 왼쪽 메뉴에서 demo Realm을 선택합니다.
+3. Clients 메뉴로 이동하여 목록에서 backend-client를 클릭합니다.
+4. 클라이언트 설정 상단의 Service Account Roles 탭을 클릭합니다.
+5. Assign role 버튼을 클릭합니다.
+6. Filter by clients 옵션을 선택하고, 검색창에 realm-management를 입력하여 선택합니다.
+7. realm-management 클라이언트가 제공하는 역할 목록이 나타나면, manage-users를 찾아 선택한 후 Assign 버튼을 누릅니다.
