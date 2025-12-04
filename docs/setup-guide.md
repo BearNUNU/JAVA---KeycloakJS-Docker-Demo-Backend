@@ -40,11 +40,12 @@ Docker 컨테이너가 실행되면 Keycloak 관리자 콘솔에 접속하여 Re
     -   `Authorization`: **Off**
     -   `Authentication flow`: 모두 **Unchecked**
 4.  `Save` 버튼을 눌러 클라이언트를 생성합니다.
-5.  생성된 `backend-client` 설정 화면에서 다음을 설정합니다.
-    -   `Access type`: **confidential** 로 변경
-    -   `Service accounts roles` 탭으로 이동합니다.
+5.  생성된 `backend-client` 설정 화면에서 다음을 설정합니다. (Keycloak v25+ 기준)
+    -   `Settings` 탭에서 `Client authentication` 스위치를 **ON**으로 설정합니다. (이전 버전의 'confidential'에 해당)
+    -   `Service accounts` 기능 스위치를 **ON**으로 설정하고 **저장**합니다.
+    -   `Service Account Roles` 탭으로 이동합니다.
     -   `Assign role` 버튼을 클릭합니다.
-    -   `Filter by realm roles`를 선택하고 `delete-user`를 검색하여 `realm-management` 클라이언트의 `delete-user` 역할을 할당합니다.
+    -   검색창에 `delete-user`를 입력하고, `realm-management` 클라이언트의 `delete-user` 역할을 찾아 선택한 후 할당합니다.
 6.  `Credentials` 탭으로 이동하여 `Client secret` 값을 복사해둡니다. 이 값은 Spring Boot 애플리케이션의 `application.properties` 파일에 사용됩니다.
 ---
 
